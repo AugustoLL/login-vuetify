@@ -1,4 +1,4 @@
-# login-vuetify
+# Simple Login UI with Vuetify
 
 ## Project setup
 ```
