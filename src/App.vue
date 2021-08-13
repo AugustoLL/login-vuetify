@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-content>
+      <v-card width="400" class="mx-auto mt-10" dark>
+        <v-card-title class="pt-10 pb-5 red accent-2">
+          <h1 class="mx-auto black--text">
+            <v-icon color="black" x-large>mdi-vuetify</v-icon>Login
+          </h1>
+        </v-card-title>
+        <v-card-text class="px-10 py-3">
+          <v-form>
+            <v-text-field label="Username" prepend-icon="mdi-account-circle"></v-text-field>
+            <v-text-field 
+              label="Password" 
+              prepend-icon="mdi-key" 
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'" 
+              :type="showPassword ? 'text' : 'password'"
+              @click:append="showPassword = !showPassword"
+            ></v-text-field>
+          </v-form>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions class="px-10 py-3">
+          <v-btn color="red accent-2">Register</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn color="secondary">Login</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
-</script>
+  },
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+    showPassword: false,
+  }),
+};
+</script>
