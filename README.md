@@ -1,5 +1,7 @@
 # Simple Login UI with Vuetify
 
+![Preview Image](preview.png)
+
 ## Project setup
 ```
 npm install
